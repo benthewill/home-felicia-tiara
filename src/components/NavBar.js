@@ -18,10 +18,11 @@ export default function NavBar({ items }) {
 
   return (
     <Navbar
-      shouldHideOnScroll
-      // isBordered
+      // shouldHideOnScroll
+      isBordered
       // onMenuOpenChange={setIsMenuOpen}
-      className={"bg-transparent "}
+      className={"bg-transparent h-10 md:h-20"}
+      maxWidth="full"
     >
       <NavbarContent>
         <NavbarItem>
@@ -32,22 +33,28 @@ export default function NavBar({ items }) {
               width={20}
               height={20}
             /> */}
-            Home
+            <p className="font-thin text-xs md:text-xl tracking-[0.3em]">
+              HOME
+            </p>
           </Link>
         </NavbarItem>
       </NavbarContent>
-      {/* <NavbarContent className="gap-4" justify="center">
+      <NavbarContent className="gap-20" justify="center">
         <NavbarItem>
-          <Link
-            replace
-            href="/stories"
-            color="secondary"
-            className={"text-zinc-100"}
-          >
-            All Stories
+          <Link replace href="/projects" color="secondary">
+            <p className="font-thin text-xs md:text-xl tracking-[0.3em]">
+              PROJECTS
+            </p>
           </Link>
         </NavbarItem>
-      </NavbarContent> */}
+        <NavbarItem>
+          <Link replace href="/projects" color="secondary">
+            <p className="font-thin text-xs md:text-xl tracking-[0.3em]">
+              ABOUT
+            </p>
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
     </Navbar>
   );
 }

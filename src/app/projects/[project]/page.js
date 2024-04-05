@@ -18,10 +18,12 @@ export default async function Page({ params }) {
   const projectPremise = projectTitles[0].project_premise;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="my-24 max-w-4xl">
-        <p className="mb-4 text-9xl font-black">{projectTitle}</p>
-        <p className="text-xl font-thin">{projectPremise}</p>
+    <main className="flex min-h-screen flex-col justify-between p-4 md:p-12">
+      <div className="my-12 md:my-24 max-w-full md:max-w-2xl">
+        <p className="mb-4 text-4xl md:text-[10rem] leading-none tracking-widest font-black pb-0 md:pb-10">
+          {projectTitle.toUpperCase()}
+        </p>
+        <p className="text-2xl md:text-3xl font-thin">{projectPremise}</p>
       </div>
       {projectData.map((item, index) => {
         return (

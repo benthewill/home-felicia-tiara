@@ -10,21 +10,25 @@ export default function ProjectPageSection({ item, projectID }) {
   const storagePhotoURL = `https://gvjbpydxtrwlusgdmwzb.supabase.co/storage/v1/object/public/photos/${projectID}/${projectDataName}`;
 
   return (
-    <div className="flex max-w-4xl flex-col gap-4 pb-24">
+    <div className="flex max-w-8xl flex-col gap-2 md:gap-4 pb-10 md:pb-24">
       <div className="flex flex-col">
         {projectIsMedia ? (
-          <div className="flex w-full flex-col gap-4 p-6">
+          <div className="flex w-full flex-col gap-4 p-0 md:p-6">
             <Image
-              isZoomed
-              width={600}
+              // isZoomed
+              width={4000}
               alt={projectDataCaption}
               src={storagePhotoURL}
             />
-            <p className="text-xl font-thin">{projectDataCaption}</p>
+            <p className="text-lg md:text-2xl font-thin">
+              {projectDataCaption}
+            </p>
           </div>
         ) : (
-          <div className="p-6">
-            <p className="text-3xl font-bold">{projectDataCaption}</p>
+          <div className="p-0 md:p-6">
+            <p className="text-3xl md:text-5xl font-bold">
+              {projectDataCaption}
+            </p>
           </div>
         )}
       </div>

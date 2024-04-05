@@ -11,6 +11,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import NavBar from "@/components/NavBar";
+import ScrollContainer from "@/components/ScrollContainer";
 
 const defaultFont = Manrope({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="light:bg-white dark:bg-black">
-      <body className={defaultFont.className}>
+    <html lang="en" className="bg-zinc-300 dark:bg-black">
+      <body className={`${defaultFont.className}`}>
         <Providers>
-          <NavBar />
-          {children}
+          <ScrollContainer>
+            <NavBar />
+            {children}
+          </ScrollContainer>
         </Providers>
       </body>
     </html>
